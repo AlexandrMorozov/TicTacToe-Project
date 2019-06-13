@@ -8,6 +8,7 @@ import Logic.GameSession;
 public class Main
 {
     // static GamePlatformInterface test=new ConsoleIO();
+    //new comment
 
     //Точка входа для консольного приложения
     public static void main(String[] args)
