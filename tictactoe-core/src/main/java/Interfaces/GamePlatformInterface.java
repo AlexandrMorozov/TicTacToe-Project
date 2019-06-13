@@ -6,5 +6,6 @@ public interface GamePlatformInterface
 {
     void displayMenu();
     String enterAnswer();
+
     void displayField(char[][] gameField);
 }

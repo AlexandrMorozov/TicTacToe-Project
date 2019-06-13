@@ -18,64 +18,77 @@ public class GameSession
 
     public void gameProcess()
     {
+        boolean isVictory=false;
 
-    }
-
-    private void victoryConditionsChecking()
-    {
-        int[][] victoryCounters=new int[2][4];//счётчики для каждойкомбинации
-        char[][] fieldOfGame=gameField.getGameTiles();
-        for(int j=0;j<fieldOfGame.length;j++)//подсчёт комбинаций
+        while (isVictory==false)
         {
-            for (int k=0;k<fieldOfGame[j].length;k++)
+
+            for(int i=0;i<listOfPlayers.size();i++)
             {
-                if(fieldOfGame[j][k]==listOfPlayers.get(0).getGameSymbol())
+
+                char currentSymbol=listOfPlayers.get(i).getGameSymbol();
+                if(diagonalVictoryChecking(currentSymbol,gameField.getGameTiles()) || hvVictoryChecking(currentSymbol,gameField.getGameTiles()))
                 {
-                    //victoryCounters[0]
-                    victoryCounters[0]=changeCounter(j,k,victoryCounters[0]);
-                }
-                else if(fieldOfGame[j][k]==listOfPlayers.get(1).getGameSymbol())
-                {
-                    victoryCounters[1]=changeCounter(j,k,victoryCounters[1]);
+                    isVictory=true;
                 }
             }
         }
-        for (int g=0;g<victoryCounters.length;g++)//проверка счётчиков
-        {
-
-        }
-
-
     }
-    private int[] changeCounter(int j, int k,int[] playerCounter)
+
+   /* private int victoryConditionsCalculation()
     {
-        if((j==1 && k==0) || (j==2 && k==1) || (j==1 && k==2) || (j==0 && k==1))
+        char[][] fieldOfGame=gameField.getGameTiles();
+
+        for(int i=0;i<listOfPlayers.size();i++)
         {
-            playerCounter[0]++;
-            playerCounter[1]++;
+            char currentSymbol=listOfPlayers.get(i).getGameSymbol();
+            if(diagonalVictoryChecking(currentSymbol,fieldOfGame) || hvVictoryChecking(currentSymbol,fieldOfGame))
+            {
+                return i;
+            }
         }
-        else if((j==0 && k==0) || (j==2 && k==2))
+
+    }*/
+    private boolean diagonalVictoryChecking(char currentSymbol, char[][] fieldOfGame)
+    {
+
+        if((fieldOfGame[0][0]==currentSymbol && fieldOfGame[1][1]==currentSymbol && fieldOfGame[2][2]==currentSymbol)
+                || (fieldOfGame[0][2]==currentSymbol && fieldOfGame[1][1]==currentSymbol && fieldOfGame[2][0]==currentSymbol))
         {
-            playerCounter[0]++;
-            playerCounter[1]++;
-            playerCounter[2]++;
+            return true;
         }
-        else if((j==0 && k==2) || (j==2 && k==0))
-        {
-            playerCounter[0]++;
-            playerCounter[1]++;
-            playerCounter[3]++;
-        }
-        else if((j==1 && k==1))
-        {
-            playerCounter[0]++;
-            playerCounter[1]++;
-            playerCounter[2]++;
-            playerCounter[3]++;
-        }
-        return playerCounter;
+        return false;
     }
+    private boolean hvVictoryChecking(char currentSymbol, char[][] fieldOfGame)//Проверка победы по вертикали и горизонтали
+    {
+        int[] verticalVictoryCounters=new int[3];
+        for(int m=0;m<fieldOfGame.length;m++)
+        {
+            int horizontalVictoryCounter=0;
 
+            for(int n=0;n<fieldOfGame[m].length;n++)
+            {
+                if(fieldOfGame[m][n]==currentSymbol)
+                {
+                    horizontalVictoryCounter++;
+                    verticalVictoryCounters[n]++;
+                }
+            }
 
+            if(horizontalVictoryCounter==3)
+            {
+                return true;
+            }
+        }
+        for(int a=0;a<verticalVictoryCounters.length;a++)//Можно вынести в отдельный метод
+        {
+            if(verticalVictoryCounters[a]==3)
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
 
 }

@@ -2,12 +2,16 @@ package InputOutput;
 
 import Interfaces.GamePlatformInterface;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleIO implements GamePlatformInterface
 {
+    /*public static void main(String[] args)
+    {
+       enterCoordinates("Al",'X');
+    }*/
     //Отображение меню
-
     public void displayMenu()
     {
         System.out.println("Hello! Welcome in our incredible Tic-Tac-Toe game! Please, Choose your action(Enter number of action):");
@@ -58,6 +62,57 @@ public class ConsoleIO implements GamePlatformInterface
         }
     }
 
+    public int[] enterCoordinates(String playerName, char playerSign)
+    {
+        int[] coordinates;
+
+        do {
+            //Можно вынести в отдельный метод
+            System.out.println("Player "+playerName+"("+playerSign+") turn. Enter coordinates of the tile in the following order: X;Y :");
+            coordinates= receiveCoordinates();
+            System.out.println();
+        }
+        while (checkCoordinates(coordinates)==false);
+
+        return coordinates;
+    }
+    private int[] receiveCoordinates()
+    {
+        int[] coordinates=new int[2];
+        for(int i=0;i<2;i++)
+        {
+            boolean isValid=false;
+            while (isValid==false)
+            {
+                String message="Enter "+i+" coordinate";
+                System.out.println(message);
+                try
+                {
+                    Scanner input=new Scanner(System.in);
+                    coordinates[i]=input.nextInt();
+                    isValid=true;
+                }
+                catch (InputMismatchException e)
+                {
+                }
+            }
+        }
+        return coordinates;
+
+    }
+
+    private boolean checkCoordinates(int[] coordinates)
+    {
+        for(int i=0;i<coordinates.length;i++)
+        {
+            if(coordinates[i]<0 || coordinates[i]>2)
+            {
+                System.out.println("Wrong data! Numbers should be from 0 to 2");
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }
