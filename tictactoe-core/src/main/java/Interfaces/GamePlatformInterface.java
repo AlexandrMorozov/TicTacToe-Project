@@ -5,7 +5,12 @@ package Interfaces;
 public interface GamePlatformInterface
 {
     void displayMenu();
-    String enterAnswer();
-
+    void displayOpponentChoosingMenu();
     void displayField(char[][] gameField);
+    void displaySignCombinationChoosingMenu(String[] playersNames);
+    String enterAnswer();
+    String enterTypeOfGame();
+    String[] enterPlayerMultiplayer();
+    String enterPlayer(int playerNum);
+    char[] enterSign();
 }

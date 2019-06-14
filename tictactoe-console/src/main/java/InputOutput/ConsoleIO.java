@@ -4,13 +4,26 @@ import Interfaces.GamePlatformInterface;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class ConsoleIO implements GamePlatformInterface
 {
-    /*public static void main(String[] args)
+   /* public static void main(String[] args)
     {
-       enterCoordinates("Al",'X');
+       //enterCoordinates("Al",'X');
+        validatePlayer("dd");
     }*/
+
+   private String inputStringData(String message)
+   {
+       String receiver;
+       Scanner input=new Scanner(System.in);
+       System.out.print(message);
+       receiver=input.nextLine();
+       System.out.println();
+       //input.close();
+       return receiver;
+   }
     //Отображение меню
     public void displayMenu()
     {
@@ -36,14 +49,14 @@ public class ConsoleIO implements GamePlatformInterface
     //Ввод действия
     public String enterAnswer()
     {
-        double test=23;
         String action;
-        Scanner input=new Scanner(System.in);
+        //Scanner input=new Scanner(System.in);
         do {
             //Можно вынести в отдельный метод
-            System.out.print("Please enter your action: ");
-            action=input.nextLine();
-            System.out.println();
+            //System.out.print("Please enter your action: ");
+            //action=input.nextLine();
+            //System.out.println();
+            action=inputStringData("Please enter your action: ");
         }
         while (checkAnswer(action)==false);
 
@@ -61,7 +74,7 @@ public class ConsoleIO implements GamePlatformInterface
             }
         }
     }
-
+    //Ввод координат
     public int[] enterCoordinates(String playerName, char playerSign)
     {
         int[] coordinates;
@@ -76,6 +89,7 @@ public class ConsoleIO implements GamePlatformInterface
 
         return coordinates;
     }
+    //Проверка ввода на валидность
     private int[] receiveCoordinates()
     {
         int[] coordinates=new int[2];
@@ -100,7 +114,7 @@ public class ConsoleIO implements GamePlatformInterface
         return coordinates;
 
     }
-
+    //Проверка данных на валидность
     private boolean checkCoordinates(int[] coordinates)
     {
         for(int i=0;i<coordinates.length;i++)
@@ -113,6 +127,143 @@ public class ConsoleIO implements GamePlatformInterface
         }
         return true;
     }
+    //Вывод меню выбора типа игры
+    public void displayOpponentChoosingMenu()
+    {
+        System.out.println("Select type of game:");
+        System.out.println("1. Another player");
+        System.out.println("2. Game bot");
+    }
+    //Ввод типа игры
+    public String enterTypeOfGame()
+    {
+        String action;
+        //Scanner input=new Scanner(System.in);
+        do {
+            //Можно вынести в отдельный метод
+            /*System.out.print("Please choose type of the game: ");
+            action=input.nextLine();
+            System.out.println();*/
+            action=inputStringData("Please choose type of the game: ");
+        }
+        while (checkTypeOfGame(action)==false);
+
+        return action;
+    }
+    //Проверка ввода типа игры
+    private boolean checkTypeOfGame(String answer)
+    {
+        if(answer.equals("1") || answer.equals("2") )
+        {
+            return true;
+        }
+        else
+        {
+            System.out.println("Wrong data! Please try again ...");
+        }
+        return false;
+    }
+
+    //Общий метод ввода для игры с другим игроком(с проверкой на совпадение имён)
+    public String[] enterPlayerMultiplayer()
+    {
+        String[] playersNames=new String[2];
+        do {
+
+            for(int i=0;i<2;i++)
+            {
+               playersNames[i]= enterPlayer(i);
+            }
+        }
+        while (checkPlayersNamesMatch(playersNames)==false);
+
+        return playersNames;
+
+    }
+    //Ввод имени игрока
+    public String enterPlayer(int playerNum)
+    {
+        String action;
+       // Scanner input=new Scanner(System.in);
+        do {
+            /*System.out.print("Enter "+playerNum+" player name: ");
+            action=input.nextLine();
+            System.out.println();*/
+            action=inputStringData("Enter "+playerNum+" player name: ");
+        }
+        while (validatePlayer(action)==false);
+
+        return action;
+    }
+    //Проверка введённого имени на валидность
+    private boolean validatePlayer(String playerName)
+    {
+        if(Pattern.matches("[A-Za-z0-9]*",playerName))
+        {
+            return true;
+        }
+
+        return false;
+    }
+    //Проверка имён игроков на совпадение
+    private boolean checkPlayersNamesMatch(String[] playersNames)
+    {
+        if(playersNames[0].equals(playersNames[1]))
+        {
+            return false;
+        }
+
+        return true;
+    }
+    //Менб выбора знака
+    public void displaySignCombinationChoosingMenu(String[] playersNames)
+    {
+        System.out.println("Select sign combination: ");
+        System.out.println("1. "+playersNames[0]+" X; "+playersNames[1]+" O; ");
+        System.out.println("2. "+playersNames[1]+" X; "+playersNames[0]+" O; ");
+    }
+    //Ввод знака
+    public char[] enterSign()
+    {
+        char[] signs=new char[2];
+        String action;
+        do {
+            action=inputStringData("Enter combination: ");
+        }
+        while (validateSign(action)==false);
+
+
+        if(action.equals("1"))
+        {
+            signs[0]='X';
+            signs[1]='O';
+        }
+        else if(action.equals("2"))
+        {
+            signs[0]='O';
+            signs[1]='X';
+        }
+
+        return signs;
+    }
+    //Проверка правильности ввода
+    private boolean validateSign(String combination)
+    {
+        if(combination.equals("1") || combination.equals("2") )
+        {
+            return true;
+        }
+        else
+        {
+            System.out.println("Wrong data! Please try again ...");
+        }
+        return false;
+    }
+
+
+
+
+
 
 
 }

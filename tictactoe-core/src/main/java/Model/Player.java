@@ -7,6 +7,12 @@ public class Player implements PlayerInterface
     private String name;
     private char gameSymbol;
 
+    public Player(String name,char gameSymbol)
+    {
+        this.name=name;
+        this.gameSymbol=gameSymbol;
+    }
+
     public String getName()
     {
         return name;

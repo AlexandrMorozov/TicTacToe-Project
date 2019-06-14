@@ -2,18 +2,27 @@ package Logic;
 
 import Interfaces.PlayerInterface;
 import Model.GameField;
+import Model.Player;
+import Model.PlayerAI;
 
 import java.util.ArrayList;
 
 public class GameSession
 {
     private GameField gameField;
-    private ArrayList<PlayerInterface> listOfPlayers;
+    private ArrayList<PlayerInterface> listOfPlayers=new ArrayList<PlayerInterface>();
 
 
-    public void initializePlayers()
+    public void initializePlayer(String playerName,char playerSign, boolean isBot)
     {
-
+        if(isBot)
+        {
+            listOfPlayers.add(new PlayerAI(playerName,playerSign));
+        }
+        else
+        {
+            listOfPlayers.add(new Player(playerName,playerSign));
+        }
     }
 
     public void gameProcess()

@@ -4,9 +4,9 @@ import Interfaces.PlayerInterface;
 
 public class PlayerAI extends Player implements PlayerInterface
 {
-    public PlayerAI()
+    public PlayerAI(String name,char gameSymbol)
     {
-        //super();
+        super(name,gameSymbol);
     }
 
 }
