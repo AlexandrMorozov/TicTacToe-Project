@@ -7,11 +7,6 @@ public class Player implements PlayerInterface
     private String name;
     private char gameSymbol;
 
-    public Player()
-    {
-
-    }
-
     public String getName()
     {
         return name;
