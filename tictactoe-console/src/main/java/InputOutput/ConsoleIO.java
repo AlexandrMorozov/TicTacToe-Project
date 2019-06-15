@@ -50,12 +50,7 @@ public class ConsoleIO implements GamePlatformInterface
     public String enterAnswer()
     {
         String action;
-        //Scanner input=new Scanner(System.in);
         do {
-            //Можно вынести в отдельный метод
-            //System.out.print("Please enter your action: ");
-            //action=input.nextLine();
-            //System.out.println();
             action=inputStringData("Please enter your action: ");
         }
         while (checkAnswer(action)==false);
@@ -138,12 +133,7 @@ public class ConsoleIO implements GamePlatformInterface
     public String enterTypeOfGame()
     {
         String action;
-        //Scanner input=new Scanner(System.in);
         do {
-            //Можно вынести в отдельный метод
-            /*System.out.print("Please choose type of the game: ");
-            action=input.nextLine();
-            System.out.println();*/
             action=inputStringData("Please choose type of the game: ");
         }
         while (checkTypeOfGame(action)==false);
@@ -184,11 +174,7 @@ public class ConsoleIO implements GamePlatformInterface
     public String enterPlayer(int playerNum)
     {
         String action;
-       // Scanner input=new Scanner(System.in);
         do {
-            /*System.out.print("Enter "+playerNum+" player name: ");
-            action=input.nextLine();
-            System.out.println();*/
             action=inputStringData("Enter "+playerNum+" player name: ");
         }
         while (validatePlayer(action)==false);

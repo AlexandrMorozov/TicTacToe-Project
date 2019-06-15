@@ -13,4 +13,5 @@ public interface GamePlatformInterface
     String[] enterPlayerMultiplayer();
     String enterPlayer(int playerNum);
     char[] enterSign();
+    int[] enterCoordinates(String playerName, char playerSign);
 }

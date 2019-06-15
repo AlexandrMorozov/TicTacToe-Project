@@ -1,8 +1,7 @@
 package Model;
 
-import Interfaces.PlayerInterface;
 
-public class Player implements PlayerInterface
+public class Player
 {
     private String name;
     private char gameSymbol;
@@ -21,15 +20,5 @@ public class Player implements PlayerInterface
     public char getGameSymbol()
     {
         return gameSymbol;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public void setGameSymbol(char gameSymbol)
-    {
-        this.gameSymbol = gameSymbol;
     }
 }

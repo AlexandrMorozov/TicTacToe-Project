@@ -3,13 +3,13 @@ package Main;
 import InputOutput.ConsoleIO;
 import Interfaces.GamePlatformInterface;
 import Logic.GameSession;
+import Logic.InputOutputController;
 
 
 public class Main
 {
     // static GamePlatformInterface test=new ConsoleIO();
     //new comment
-
     //Точка входа для консольного приложения
     public static void main(String[] args)
     {
@@ -37,7 +37,7 @@ public class Main
     }
     private static void startGameSession(GamePlatformInterface test)
     {
-        GameSession newGame=new GameSession();
+       // GameSession newGame=new GameSession();
         test.displayOpponentChoosingMenu();
         String[] playersNames=new String[2];
         char[] playersSigns;
@@ -54,10 +54,14 @@ public class Main
         }
         test.displaySignCombinationChoosingMenu(playersNames);
         playersSigns=test.enterSign();
-        for(int i=0;i<playersNames.length;i++)
+        /*for(int i=0;i<playersNames.length;i++)
         {
             newGame.initializePlayer(playersNames[i],playersSigns[i],isBot[i]);
-        }
+        }*/
+        InputOutputController ioControl=new InputOutputController(test);
+        GameSession newGame=new GameSession(playersNames,playersSigns,isBot,ioControl);
+        newGame.gameProcess();
+
 
     }
     private static void showStatistics(GamePlatformInterface test)

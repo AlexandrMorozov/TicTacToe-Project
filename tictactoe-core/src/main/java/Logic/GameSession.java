@@ -1,6 +1,5 @@
 package Logic;
 
-import Interfaces.PlayerInterface;
 import Model.GameField;
 import Model.Player;
 import Model.PlayerAI;
@@ -9,11 +8,20 @@ import java.util.ArrayList;
 
 public class GameSession
 {
-    private GameField gameField;
-    private ArrayList<PlayerInterface> listOfPlayers=new ArrayList<PlayerInterface>();
+    private GameField gameField=new GameField();
+    private ArrayList<Player> listOfPlayers=new ArrayList<Player>();
+    InputOutputController ioControl;
 
+    public GameSession(String[] playersNames,char[] playersSigns,boolean[] isBot,InputOutputController ioControl)
+    {
+        this.ioControl=ioControl;
+        for(int i=0;i<2;i++)
+        {
+            initializePlayer(playersNames[i],playersSigns[i],isBot[i]);
+        }
+    }
 
-    public void initializePlayer(String playerName,char playerSign, boolean isBot)
+    /*public*/private void initializePlayer(String playerName,char playerSign, boolean isBot)
     {
         if(isBot)
         {
@@ -28,36 +36,63 @@ public class GameSession
     public void gameProcess()
     {
         boolean isVictory=false;
+        boolean isDraw=false;
 
-        while (isVictory==false)
+
+
+        while (isVictory==false && isDraw==false)
         {
-
+            //ioControl.displayGameField(gameField.getGameTiles());
             for(int i=0;i<listOfPlayers.size();i++)
             {
-
                 char currentSymbol=listOfPlayers.get(i).getGameSymbol();
+                int[] coordinates;
+
+                do {
+                    ioControl.displayGameField(gameField.getGameTiles());
+                    if(listOfPlayers.get(i) instanceof PlayerAI)
+                    {
+                        PlayerAI duplicate=(PlayerAI) listOfPlayers.get(i);
+                        coordinates=duplicate.responseAIPrototype();
+                    }
+                    else
+                    {
+                        coordinates=ioControl.enterGameCoordinates(listOfPlayers.get(i).getName(),listOfPlayers.get(i).getGameSymbol());
+
+                    }
+                }
+                while (gameField.setTile(coordinates,listOfPlayers.get(i).getGameSymbol())==false);
+
                 if(diagonalVictoryChecking(currentSymbol,gameField.getGameTiles()) || hvVictoryChecking(currentSymbol,gameField.getGameTiles()))
                 {
                     isVictory=true;
+                    break;
                 }
+                else if(drawChecking(gameField.getGameTiles()))
+                {
+                    isDraw=true;
+                    break;
+                }
+
+
             }
         }
     }
 
-   /* private int victoryConditionsCalculation()
+    private boolean drawChecking(char[][] fieldOfGame)
     {
-        char[][] fieldOfGame=gameField.getGameTiles();
-
-        for(int i=0;i<listOfPlayers.size();i++)
+        for (int i=0;i<fieldOfGame.length;i++)
         {
-            char currentSymbol=listOfPlayers.get(i).getGameSymbol();
-            if(diagonalVictoryChecking(currentSymbol,fieldOfGame) || hvVictoryChecking(currentSymbol,fieldOfGame))
+            for (int j=0;j<fieldOfGame[i].length;j++)
             {
-                return i;
+                if(fieldOfGame[i][j]==0)
+                {
+                    return false;
+                }
             }
         }
-
-    }*/
+        return true;
+    }
     private boolean diagonalVictoryChecking(char currentSymbol, char[][] fieldOfGame)
     {
 

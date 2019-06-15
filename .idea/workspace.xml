@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b87419-392c-44bb-b68d-4a647ed9429f" name="Default" comment="Добавлен выбор типа игры(С ботом или с человеком). Добавлена инициализация игроков(ввод имени, выбор знака)">
+    <list default="true" id="50b87419-392c-44bb-b68d-4a647ed9429f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/InputOutputController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java" afterDir="false" />
     </list>
@@ -26,8 +29,8 @@
       <file leaf-file-name="GamePlatformInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="15" column="63" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -35,11 +38,11 @@
       <file leaf-file-name="PlayerAI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#209#210#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,10 +51,25 @@
       <file leaf-file-name="ConsoleIO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="237" column="25" lean-forward="true" selection-start-line="237" selection-start-column="25" selection-end-line="237" selection-end-column="25" />
+            <state relative-caret-position="-1419">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputOutputController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/InputOutputController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,22 +78,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-625">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="-975">
+              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1852#1853#0" expanded="true" />
-                <element signature="e#1882#1883#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1928#1929#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scanner.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Scanner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="1650" selection-start-line="1650" selection-end-line="1650" />
             </state>
           </provider>
         </entry>
@@ -83,21 +91,11 @@
       <file leaf-file-name="GameSession.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="187">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#275#292#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -105,17 +103,13 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#365#366#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
+                <element signature="e#308#309#0" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#374#375#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,15 +118,13 @@
       <file leaf-file-name="GameField.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="128">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#101#102#0" expanded="true" />
                 <element signature="e#141#142#0" expanded="true" />
-                <element signature="e#260#261#0" expanded="true" />
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#266#267#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,8 +135,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -167,18 +159,27 @@
         <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Logic/GameSession.java" />
         <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java" />
         <option value="$PROJECT_DIR$/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/.gitignore" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Test.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test2.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/ITest.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tictactoe-console/src/main/java/Main/Test.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Model/Test.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Model/Test2.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Model/ITest.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Model/Player.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Model/PlayerAI.java" />
+        <option value="$PROJECT_DIR$/tictactoe-console/src/main/java/Main/Main.java" />
+        <option value="$PROJECT_DIR$/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" />
+        <option value="$PROJECT_DIR$/tictactoe-core/src/main/java/Logic/GameSession.java" />
+        <option value="$PROJECT_DIR$/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" />
         <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java" />
-        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java" />
         <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java" />
+        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java" />
+        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java" />
+        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java" />
+        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java" />
         <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java" />
+        <option value="$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/InputOutputController.java" />
       </list>
     </option>
   </component>
@@ -328,6 +329,15 @@
               <item name="tictactoe" type="b2602c69:ProjectViewProjectNode" />
               <item name="tictactoe-true" type="462c0819:PsiDirectoryNode" />
               <item name="tictactoe-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tictactoe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tictactoe-true" type="462c0819:PsiDirectoryNode" />
+              <item name="tictactoe-core" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -341,8 +351,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -488,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560505703707</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлен выбор типа игры(С ботом или с человеком). Добавлена инициализация игроков(ввод имени, выбор знака)">
+      <created>1560524968800</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560524968800</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -502,35 +519,62 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48389262" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.47986576" weight="0.32905984" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5053691" side_tool="true" visible="true" weight="0.36894587" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5161074" side_tool="true" weight="0.2735043" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.3295302" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49798658" weight="0.2948718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49463087" visible="true" weight="0.36894587" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49597314" weight="0.2948718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49328858" visible="true" weight="0.36894587" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2590604" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24966443" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48724833" weight="0.3988604" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48389262" weight="0.38319087" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49328858" weight="0.36894587" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.24966443" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48389262" visible="true" weight="0.2735043" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5161074" side_tool="true" visible="true" weight="0.2735043" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49597314" weight="0.2948718" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.47986576" weight="0.32905984" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3295302" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -567,19 +611,12 @@
     <MESSAGE value="Удалён файл Main в модуле tictactoecore" />
     <MESSAGE value="Убрана директория .idea" />
     <MESSAGE value="Убрана директория .idea(x2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрана директория .idea(x2)" />
+    <MESSAGE value="Добавлен выбор типа игры(С ботом или с человеком). Добавлена инициализация игроков(ввод имени, выбор знака)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен выбор типа игры(С ботом или с человеком). Добавлена инициализация игроков(ввод имени, выбор знака)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -587,6 +624,180 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28050">
+          <caret line="1650" selection-start-line="1650" selection-end-line="1650" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="45" />
+          <folding>
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#101#102#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4250">
+          <caret line="250" column="5" selection-start-line="250" selection-start-column="5" selection-end-line="250" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3961">
+          <caret line="237" column="25" lean-forward="true" selection-start-line="237" selection-start-column="25" selection-end-line="237" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28050">
+          <caret line="1650" selection-start-line="1650" selection-end-line="1650" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="45" />
+          <folding>
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#101#102#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -608,20 +819,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#167#168#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/Main.java" />
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -634,9 +835,8 @@
         <state relative-caret-position="136">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1852#1853#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -653,14 +853,10 @@
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -672,10 +868,8 @@
           <folding>
             <element signature="e#101#102#0" expanded="true" />
             <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,7 +880,6 @@
           <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#275#292#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -704,10 +897,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/Main.java">
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/Main.java" />
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Test.java" />
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/ITest.java" />
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test2.java" />
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="27013">
+          <caret line="1650" selection-start-line="1650" selection-end-line="1650" />
         </state>
       </provider>
     </entry>
@@ -718,125 +916,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Test.java">
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/ITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="1650" selection-start-line="1650" selection-end-line="1650" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="-975">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
           <folding>
-            <element signature="e#101#102#0" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#275#292#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/PlayerAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Model/GameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#101#102#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/PlayerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/GameSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Interfaces/GamePlatformInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="255">
+          <caret line="15" column="63" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/Main/Main.java">
+    <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-core/src/main/java/Logic/InputOutputController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-625">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="518">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1852#1853#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tictactoe-true/tictactoe-console/src/main/java/InputOutput/ConsoleIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="237" column="25" lean-forward="true" selection-start-line="237" selection-start-column="25" selection-end-line="237" selection-end-column="25" />
+        <state relative-caret-position="-1419">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -895,7 +1063,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>tictactoe-true</last-edited>
+          <last-edited>tictactoecore</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

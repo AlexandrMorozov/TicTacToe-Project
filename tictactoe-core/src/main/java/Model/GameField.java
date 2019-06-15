@@ -13,13 +13,26 @@ public class GameField
     {
         return gameTiles;
     }
-    public char getTile(int x,int y)
+    public char getTile(int[] coordinates)
     {
-        return gameTiles[x][y];
+        return gameTiles[coordinates[0]][coordinates[1]];
     }
-    public void setTile(int x,int y,char symbol)
+    public boolean setTile(int[] coordinates,char symbol)
     {
-        gameTiles[x][y]=symbol;
+        if(checkTile(coordinates))
+        {
+            gameTiles[coordinates[0]][coordinates[1]]=symbol;
+            return true;
+        }
+        return false;
+    }
+    private boolean checkTile(int[] coordinates)
+    {
+        if(gameTiles[coordinates[0]][coordinates[1]]!=0)
+        {
+            return false;
+        }
+        return true;
     }
 
 }
