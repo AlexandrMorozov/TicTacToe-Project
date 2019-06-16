@@ -22,7 +22,7 @@ public class GameSession
         }
     }
 
-    /*public*/private void initializePlayer(String playerName,char playerSign, boolean isBot)
+    private void initializePlayer(String playerName,char playerSign, boolean isBot)
     {
         if(isBot)
         {
@@ -42,7 +42,6 @@ public class GameSession
 
         while (isVictory==false && isDraw==false)
         {
-            //ioControl.displayGameField(gameField.getGameTiles());
             for(int i=0;i<listOfPlayers.size();i++)
             {
                 char currentSymbol=listOfPlayers.get(i).getGameSymbol();
