@@ -6,6 +6,7 @@ public class PlayerAI extends Player
     {
         super(name,gameSymbol);
     }
+
     public int[] responseAIPrototype()//
     {
         int[] test=new int[]{3,3};

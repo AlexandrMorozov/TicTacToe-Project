@@ -2,8 +2,10 @@ package Main;
 
 import InputOutput.ConsoleIO;
 import Interfaces.GamePlatformInterface;
+import Interfaces.StatisticsInterface;
 import Logic.GameSession;
 import Logic.InputOutputController;
+import Model.Statistics;
 
 
 public class Main
@@ -13,20 +15,30 @@ public class Main
     //Точка входа для консольного приложения
     public static void main(String[] args)
     {
-        GamePlatformInterface test=new ConsoleIO();
-        String action=startApplication(test);
-        if(action.equals("1"))
+        StatisticsInterface statistics=new Statistics();
+        GamePlatformInterface inputOutput=new ConsoleIO();
+        boolean isExit=false;
+
+        while (isExit==false)
         {
-            startGameSession(test);
+            String action=startApplication(inputOutput);
+
+            if(action.equals("1"))
+            {
+                startGameSession(inputOutput,statistics);
+            }
+            else if(action.equals("2"))
+            {
+                showStatistics(inputOutput,statistics);
+            }
+            else if(action.equals("3"))
+            {
+                isExit=true;
+            }
         }
-        else if(action.equals("2"))
-        {
-            showStatistics(test);
-        }
-        else if(action.equals("3"))
-        {
-            exitGame();
-        }
+
+        exitGame();
+
     }
     private static String startApplication(GamePlatformInterface test)
     {
@@ -35,38 +47,39 @@ public class Main
         action=test.enterAnswer();
         return action;
     }
-    private static void startGameSession(GamePlatformInterface test)
+    private static void startGameSession(GamePlatformInterface inputOutput,StatisticsInterface statistics)
     {
        // GameSession newGame=new GameSession();
-        test.displayOpponentChoosingMenu();
-        String[] playersNames=new String[2];
+        inputOutput.displayOpponentChoosingMenu();
+
+        String[] playersNames=null;
         char[] playersSigns;
-        boolean[] isBot=new boolean[2];
-        if(test.enterTypeOfGame().equals("1"))
+        boolean[] isBot=null;
+
+        if(inputOutput.enterTypeOfGame().equals("1"))
         {
-            playersNames=test.enterPlayerMultiplayer();
+            playersNames=inputOutput.enterPlayerMultiplayer();
             isBot= new boolean[]{false,false};
         }
-        else if(test.enterTypeOfGame().equals("2"))
+        else if(inputOutput.enterTypeOfGame().equals("2"))
         {
-            playersNames=new String[]{test.enterPlayer(0),"AI1"};
+            playersNames=new String[]{inputOutput.enterPlayer(0),"AI1"};
             isBot= new boolean[]{false,true};
         }
-        test.displaySignCombinationChoosingMenu(playersNames);
-        playersSigns=test.enterSign();
-        /*for(int i=0;i<playersNames.length;i++)
-        {
-            newGame.initializePlayer(playersNames[i],playersSigns[i],isBot[i]);
-        }*/
-        InputOutputController ioControl=new InputOutputController(test);
+
+        inputOutput.displaySignCombinationChoosingMenu(playersNames);
+        playersSigns=inputOutput.enterSign();
+
+        InputOutputController ioControl=new InputOutputController(inputOutput);
         GameSession newGame=new GameSession(playersNames,playersSigns,isBot,ioControl);
-        newGame.gameProcess();
+        newGame.gameProcess(statistics);
 
 
     }
-    private static void showStatistics(GamePlatformInterface test)
+    private static void showStatistics(GamePlatformInterface inputOutput, StatisticsInterface statistics)
     {
-
+        String[] results=statistics.getLastGameInfo();
+        inputOutput.displayEndOfGame(results);
     }
     private static void exitGame()
     {

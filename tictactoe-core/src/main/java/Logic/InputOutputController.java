@@ -51,5 +51,9 @@ public class InputOutputController
     {
         return platform.enterCoordinates(playerName,playerSign);
     }
+    public  void displayEndGame(String[] results)
+    {
+         platform.displayEndOfGame(results);
+    }
 
 }

@@ -8,10 +8,12 @@ public interface GamePlatformInterface
     void displayOpponentChoosingMenu();
     void displayField(char[][] gameField);
     void displaySignCombinationChoosingMenu(String[] playersNames);
+    void displayEndOfGame(String[] results);
     String enterAnswer();
     String enterTypeOfGame();
     String[] enterPlayerMultiplayer();
     String enterPlayer(int playerNum);
     char[] enterSign();
     int[] enterCoordinates(String playerName, char playerSign);
+
 }

@@ -245,6 +245,13 @@ public class ConsoleIO implements GamePlatformInterface
         }
         return false;
     }
+    //
+    public void displayEndOfGame(String[] results)
+    {
+        System.out.println("Last game participants: "+results[0]+", "+results[1]);
+        System.out.println("Last game result :"+results[2]);
+        System.out.println("Last game winner :"+results[3]);
+    }
 
 
 

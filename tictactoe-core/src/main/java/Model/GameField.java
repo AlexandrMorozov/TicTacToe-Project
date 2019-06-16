@@ -13,10 +13,12 @@ public class GameField
     {
         return gameTiles;
     }
+
     public char getTile(int[] coordinates)
     {
         return gameTiles[coordinates[0]][coordinates[1]];
     }
+
     public boolean setTile(int[] coordinates,char symbol)
     {
         if(checkTile(coordinates))
@@ -26,6 +28,7 @@ public class GameField
         }
         return false;
     }
+
     private boolean checkTile(int[] coordinates)
     {
         if(gameTiles[coordinates[0]][coordinates[1]]!=0)

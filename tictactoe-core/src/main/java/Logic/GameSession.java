@@ -1,5 +1,6 @@
 package Logic;
 
+import Interfaces.StatisticsInterface;
 import Model.GameField;
 import Model.Player;
 import Model.PlayerAI;
@@ -33,12 +34,11 @@ public class GameSession
         }
     }
 
-    public void gameProcess()
+    public void gameProcess(StatisticsInterface statistics)
     {
         boolean isVictory=false;
         boolean isDraw=false;
-
-
+        String[] endGameData=null;
 
         while (isVictory==false && isDraw==false)
         {
@@ -66,17 +66,22 @@ public class GameSession
                 if(diagonalVictoryChecking(currentSymbol,gameField.getGameTiles()) || hvVictoryChecking(currentSymbol,gameField.getGameTiles()))
                 {
                     isVictory=true;
+                    endGameData=new String[]{listOfPlayers.get(0).getName(),listOfPlayers.get(1).getName(),"Victory of "+ listOfPlayers.get(i).getName(),listOfPlayers.get(i).getName()};
                     break;
                 }
                 else if(drawChecking(gameField.getGameTiles()))
                 {
                     isDraw=true;
+                    endGameData=new String[]{listOfPlayers.get(0).getName(),listOfPlayers.get(1).getName(),"Draw","none"};
                     break;
                 }
 
 
             }
         }
+
+        ioControl.displayEndGame(endGameData);
+        statistics.addLastGameInfo(endGameData);
     }
 
     private boolean drawChecking(char[][] fieldOfGame)
