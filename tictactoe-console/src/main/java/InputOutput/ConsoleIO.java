@@ -8,11 +8,6 @@ import java.util.regex.Pattern;
 
 public class ConsoleIO implements GamePlatformInterface
 {
-   /* public static void main(String[] args)
-    {
-       //enterCoordinates("Al",'X');
-        validatePlayer("dd");
-    }*/
 
    private String inputStringData(String message)
    {
@@ -154,22 +149,6 @@ public class ConsoleIO implements GamePlatformInterface
         return false;
     }
 
-    //Общий метод ввода для игры с другим игроком(с проверкой на совпадение имён)
-    public String[] enterPlayerMultiplayer()
-    {
-        String[] playersNames=new String[2];
-        do {
-
-            for(int i=0;i<2;i++)
-            {
-               playersNames[i]= enterPlayer(i);
-            }
-        }
-        while (checkPlayersNamesMatch(playersNames)==false);
-
-        return playersNames;
-
-    }
     //Ввод имени игрока
     public String enterPlayer(int playerNum)
     {
@@ -192,7 +171,7 @@ public class ConsoleIO implements GamePlatformInterface
         return false;
     }
     //Проверка имён игроков на совпадение
-    private boolean checkPlayersNamesMatch(String[] playersNames)
+    /*private*/public boolean checkPlayersNamesMatch(String[] playersNames)
     {
         if(playersNames[0].equals(playersNames[1]))
         {
@@ -202,11 +181,11 @@ public class ConsoleIO implements GamePlatformInterface
         return true;
     }
     //Менб выбора знака
-    public void displaySignCombinationChoosingMenu(String[] playersNames)
+    public void displaySignCombinationChoosingMenu(String player1, String player2)
     {
         System.out.println("Select sign combination: ");
-        System.out.println("1. "+playersNames[0]+" X; "+playersNames[1]+" O; ");
-        System.out.println("2. "+playersNames[1]+" X; "+playersNames[0]+" O; ");
+        System.out.println("1. "+player1+" X; "+player2+" O; ");
+        System.out.println("2. "+player2+" X; "+player1+" O; ");
     }
     //Ввод знака
     public char[] enterSign()

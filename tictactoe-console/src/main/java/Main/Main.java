@@ -2,15 +2,17 @@ package Main;
 
 import InputOutput.ConsoleIO;
 import Interfaces.GamePlatformInterface;
+import Interfaces.PlayerInterface;
 import Interfaces.StatisticsInterface;
 import Logic.GameSession;
-import Logic.InputOutputController;
+import Model.EndGameStatistics;
+import Model.Player;
+import Model.PlayerAI;
 import Model.Statistics;
 
 
 public class Main
 {
-    // static GamePlatformInterface test=new ConsoleIO();
     //new comment
     //Точка входа для консольного приложения
     public static void main(String[] args)
@@ -49,30 +51,49 @@ public class Main
     }
     private static void startGameSession(GamePlatformInterface inputOutput,StatisticsInterface statistics)
     {
-       // GameSession newGame=new GameSession();
         inputOutput.displayOpponentChoosingMenu();
+        PlayerInterface player1=null;
+        PlayerInterface player2=null;
 
-        String[] playersNames=null;
         char[] playersSigns;
-        boolean[] isBot=null;
+
 
         if(inputOutput.enterTypeOfGame().equals("1"))
         {
-            playersNames=inputOutput.enterPlayerMultiplayer();
-            isBot= new boolean[]{false,false};
+            String[] playersNames=new String[2];
+
+            do {
+                for(int i=0;i<2;i++)
+                {
+                    playersNames[i]=inputOutput.enterPlayer(i);
+                }
+            }
+            while (inputOutput.checkPlayersNamesMatch(playersNames)==false);
+
+            player1=new Player();
+            player2=new Player();
+            player1.setName(playersNames[0]);
+            player2.setName(playersNames[1]);
         }
         else if(inputOutput.enterTypeOfGame().equals("2"))
         {
-            playersNames=new String[]{inputOutput.enterPlayer(0),"AI1"};
-            isBot= new boolean[]{false,true};
+            player1=new Player();
+            player2=new PlayerAI();
+            player1.setName(inputOutput.enterPlayer(0));
+            player2.setName("AI1");
         }
 
-        inputOutput.displaySignCombinationChoosingMenu(playersNames);
+        inputOutput.displaySignCombinationChoosingMenu(player1.getName(),player2.getName());
         playersSigns=inputOutput.enterSign();
+        player1.setGameSymbol(playersSigns[0]);
+        player2.setGameSymbol(playersSigns[1]);
 
-        InputOutputController ioControl=new InputOutputController(inputOutput);
-        GameSession newGame=new GameSession(playersNames,playersSigns,isBot,ioControl);
-        newGame.gameProcess(statistics);
+        GameSession newGame=new GameSession(inputOutput);
+
+        newGame.addPlayer(player1);
+        newGame.addPlayer(player2);
+        EndGameStatistics endGameStatistics=newGame.gameProcess();
+        statistics.addLastGameInfo(endGameStatistics);
 
 
     }

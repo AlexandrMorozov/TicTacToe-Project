@@ -1,15 +1,22 @@
 package Model;
 
 
-public class Player
-{
-    private String name;
-    private char gameSymbol;
+import Interfaces.GamePlatformInterface;
+import Interfaces.PlayerInterface;
 
-    public Player(String name,char gameSymbol)
+public class Player implements PlayerInterface
+{
+    protected String name;
+    protected char gameSymbol;
+
+    public void setName(String name)
     {
-        this.name=name;
-        this.gameSymbol=gameSymbol;
+        this.name = name;
+    }
+
+    public void setGameSymbol(char gameSymbol)
+    {
+        this.gameSymbol = gameSymbol;
     }
 
     public String getName()
@@ -20,5 +27,10 @@ public class Player
     public char getGameSymbol()
     {
         return gameSymbol;
+    }
+
+    public int[] makeMove(GamePlatformInterface platform)
+    {
+       return platform.enterCoordinates(name,gameSymbol);
     }
 }

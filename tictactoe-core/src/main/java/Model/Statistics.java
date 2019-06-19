@@ -9,6 +9,7 @@ public class Statistics implements StatisticsInterface
     private int numOfDraws=0;
     private int efficiencyCoefficient=0;*/
 
+    private EndGameStatistics endGameStatistics;
     private String[] lastGamePlayers=new String[2];
     private String lastGameResult;
     private String lastGameWinner;
@@ -21,8 +22,7 @@ public class Statistics implements StatisticsInterface
 
     public String[] getLastGameInfo()
     {
-        String[] lastGameInfo=new String[] {lastGamePlayers[0],lastGamePlayers[1],lastGameResult,lastGameWinner};
-        return lastGameInfo;
+        return endGameStatistics.getLastGameInfo();
     }
 
    /* public void addMainStatisticsInfo(String gameResult)
@@ -43,12 +43,9 @@ public class Statistics implements StatisticsInterface
         countEfficiencyCoefficient();
     }*/
 
-    public void addLastGameInfo(String[] lastGameInfo)
+    public void addLastGameInfo(EndGameStatistics endGameStatistics)
     {
-        lastGamePlayers[0]=lastGameInfo[0];
-        lastGamePlayers[1]=lastGameInfo[1];
-        lastGameResult=lastGameInfo[2];
-        lastGameWinner=lastGameInfo[3];
+        this.endGameStatistics=endGameStatistics;
     }
 
   /*  private int countEfficiencyCoefficient()

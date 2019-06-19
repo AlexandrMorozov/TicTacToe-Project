@@ -1,16 +1,20 @@
 package Model;
 
-public class PlayerAI extends Player
+import Interfaces.GamePlatformInterface;
+import Interfaces.PlayerInterface;
+
+public class PlayerAI extends Player implements PlayerInterface
 {
-    public PlayerAI(String name,char gameSymbol)
+
+    public int[] makeMove(GamePlatformInterface platform)//?????????
     {
-        super(name,gameSymbol);
+        return calculateCoordinates();
     }
 
-    public int[] responseAIPrototype()//
+    private int[] calculateCoordinates()
     {
-        int[] test=new int[]{3,3};
-        return test;
+        int[] coordinates=new int[2];
+        return coordinates;
     }
 
 }
