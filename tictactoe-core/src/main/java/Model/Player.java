@@ -3,6 +3,7 @@ package Model;
 
 import Interfaces.GamePlatformInterface;
 import Interfaces.PlayerInterface;
+import Interfaces.StatisticsInterface;
 
 public class Player implements PlayerInterface
 {
@@ -29,8 +30,16 @@ public class Player implements PlayerInterface
         return gameSymbol;
     }
 
-    public int[] makeMove(GamePlatformInterface platform)
+    public int[] makeMove(GameField field,GamePlatformInterface ...platform)
     {
-       return platform.enterCoordinates(name,gameSymbol);
+        int[] coordinates=platform[0].enterCoordinates(name,gameSymbol);
+
+        if(field.setTile(coordinates,gameSymbol)==false)
+        {
+            platform[0].displayField(field.getGameTiles());
+            coordinates=makeMove(field,platform[0]);
+        }
+
+       return coordinates;
     }
 }

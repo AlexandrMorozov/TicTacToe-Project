@@ -2,6 +2,6 @@ import org.testng.annotations.Test;
 
 public class ConsoleIOTest
 {
-    /*@Test
+    /*@Timer
     public void*/
 }

@@ -7,6 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tictactoeconsole" />
+        <module name="tictactoeweb" />
+        <module name="tictactoe-console" />
+        <module name="tictactoe-core" />
         <module name="tictactoecore" />
       </profile>
     </annotationProcessing>

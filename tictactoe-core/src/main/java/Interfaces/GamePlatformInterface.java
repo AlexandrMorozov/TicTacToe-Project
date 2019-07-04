@@ -9,11 +9,14 @@ public interface GamePlatformInterface
     void displayField(char[][] gameField);
     void displaySignCombinationChoosingMenu(String player1, String player2);
     void displayEndOfGame(String[] results);
+    void displayMainStatistics(int[] statistics, String name);
     String enterAnswer();
     String enterTypeOfGame();
     String enterPlayer(int playerNum);
     char[] enterSign();
     int[] enterCoordinates(String playerName, char playerSign);
     boolean checkPlayersNamesMatch(String[] playersNames);
+
+
 
 }

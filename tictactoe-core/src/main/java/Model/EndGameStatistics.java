@@ -3,8 +3,16 @@ package Model;
 public class EndGameStatistics
 {
     private String[] lastGamePlayers=new String[2];
-    private String lastGameResult;
-    private String lastGameWinner;
+    private String lastGameResult=null;
+    private String lastGameWinner=null;
+
+    public EndGameStatistics()
+    {
+        lastGamePlayers[0]="none";
+        lastGamePlayers[1]="none";
+        lastGameResult="none";
+        lastGameWinner="none";
+    }
 
     public EndGameStatistics(String[] lastGameInfo)
     {

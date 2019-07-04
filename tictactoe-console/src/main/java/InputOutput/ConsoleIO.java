@@ -232,6 +232,16 @@ public class ConsoleIO implements GamePlatformInterface
         System.out.println("Last game winner :"+results[3]);
     }
 
+    public void displayMainStatistics(int[] statistics, String name)
+    {
+        System.out.println("Statistics of: "+name);
+        System.out.println();
+        System.out.println("Number of victories: "+statistics[0]);
+        System.out.println("Number of defeats :"+statistics[1]);
+        System.out.println("Number of draws :"+statistics[2]);
+        System.out.println("Efficiency coefficient :"+statistics[3]);
+    }
+
 
 
 

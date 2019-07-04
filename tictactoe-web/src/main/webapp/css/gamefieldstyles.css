@@ -1,0 +1,36 @@
+.oganesyan
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    background: #3C8FB7;
+    padding: 4px 8px;
+    border: 0;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.krestiki_noliki
+{
+    width: 306px;
+    height: 380px;
+    margin: 0 auto;
+}
+.krestiki_noliki .block
+{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    font-size: 100px;
+    line-height: 94px;
+}
+.tactic
+{
+    text-align: center;
+}

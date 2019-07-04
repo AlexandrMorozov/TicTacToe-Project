@@ -5,11 +5,7 @@ import Interfaces.GamePlatformInterface;
 import Interfaces.PlayerInterface;
 import Interfaces.StatisticsInterface;
 import Logic.GameSession;
-import Model.EndGameStatistics;
-import Model.Player;
-import Model.PlayerAI;
-import Model.Statistics;
-
+import Model.*;
 
 public class Main
 {
@@ -17,7 +13,8 @@ public class Main
     //Точка входа для консольного приложения
     public static void main(String[] args)
     {
-        StatisticsInterface statistics=new Statistics();
+        //StatisticsInterface statistics=new Statistics();
+        CommonStatistics statistics=new CommonStatistics();
         GamePlatformInterface inputOutput=new ConsoleIO();
         boolean isExit=false;
 
@@ -49,7 +46,7 @@ public class Main
         action=test.enterAnswer();
         return action;
     }
-    private static void startGameSession(GamePlatformInterface inputOutput,StatisticsInterface statistics)
+    private static void startGameSession(GamePlatformInterface inputOutput,/*StatisticsInterface*/CommonStatistics statistics)
     {
         inputOutput.displayOpponentChoosingMenu();
         PlayerInterface player1=null;
@@ -57,8 +54,9 @@ public class Main
 
         char[] playersSigns;
 
+        String typeOfGame=inputOutput.enterTypeOfGame();
 
-        if(inputOutput.enterTypeOfGame().equals("1"))
+        if(typeOfGame.equals("1"))
         {
             String[] playersNames=new String[2];
 
@@ -75,7 +73,7 @@ public class Main
             player1.setName(playersNames[0]);
             player2.setName(playersNames[1]);
         }
-        else if(inputOutput.enterTypeOfGame().equals("2"))
+        else if(typeOfGame.equals("2"))
         {
             player1=new Player();
             player2=new PlayerAI();
@@ -88,19 +86,26 @@ public class Main
         player1.setGameSymbol(playersSigns[0]);
         player2.setGameSymbol(playersSigns[1]);
 
-        GameSession newGame=new GameSession(inputOutput);
+        GameSession newGame=new GameSession(inputOutput,statistics);
 
         newGame.addPlayer(player1);
         newGame.addPlayer(player2);
-        EndGameStatistics endGameStatistics=newGame.gameProcess();
-        statistics.addLastGameInfo(endGameStatistics);
+        /*EndGameStatistics endGameStatistics=*/newGame.gameProcess();
+        //statistics.addLastGameInfo(endGameStatistics);
 
 
     }
-    private static void showStatistics(GamePlatformInterface inputOutput, StatisticsInterface statistics)
+    private static void showStatistics(GamePlatformInterface inputOutput, /*StatisticsInterface*/CommonStatistics statistics)
     {
-        String[] results=statistics.getLastGameInfo();
-        inputOutput.displayEndOfGame(results);
+        //String[] results=statistics.getLastGameInfo();
+        //inputOutput.displayEndOfGame(results);
+
+        for(int i=0;i<2;i++)
+        {
+            int num=i+1;
+            inputOutput.displayMainStatistics(statistics.getMainInfo(i),"player"+num);
+            inputOutput.displayEndOfGame(statistics.getLastInfo(i));
+        }
     }
     private static void exitGame()
     {
